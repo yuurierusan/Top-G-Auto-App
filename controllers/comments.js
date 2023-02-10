@@ -12,7 +12,7 @@ const createComment = async (req, res) => {
     }
 }
 
-const getAllComment = async (req, res) => {
+const getAllComments = async (req, res) => {
     try {
         const comments = await Comments.find()
         return res.status(200).json({ comments })
@@ -66,7 +66,7 @@ const deleteComment = async (req, res) => {
 
 module.exports = {
     createComment,
-    getAllComment,
+    getAllComments,
     getCommentById,
     updateComment,
     deleteComment,
