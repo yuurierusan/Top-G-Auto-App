@@ -12,6 +12,16 @@ const createCar = async (req, res) => {
     }
 }
 
+const getAllCars = async (req, res) => {
+    try {
+        const cars = await Car.find()
+        return res.status(200).json({ plants })
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 module.exports = {
     createCar,
+    getAllCars,
 }
