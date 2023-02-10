@@ -1,5 +1,7 @@
 const { Router } = require('express')
 const carController = require('../controllers/cars')
+const commentController = require('../controllers/comments')
+const projectController = require('../controllers/projects')
 const router = Router()
 
 router.get('/', (req, res) => res.send('This is Groot!'))
