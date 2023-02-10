@@ -4,14 +4,70 @@ const Comments = require('../models/comments')
 // Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const main = async () => {
-    const comments = []
+const seedComments = async () => {
+    const comments = [
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+        {
+            title: '',
+            author: '',
+            content: '',
+        },
+    ]
 
     await Comments.insertMany(comments)
     console.log('Created some comments!')
 }
 const run = async () => {
-    await main()
+    await seedComments()
     db.close()
 }
 
