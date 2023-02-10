@@ -66,7 +66,7 @@ const seedCars = async () => {
             image: 'https://lightingtrendz.com/mm5/graphics/00000001/1/2016-2018%20Chevrolet%20Camaro%206.png',
             owner: 'Ash Davis',
             make: 'Chevy',
-            model: 'Comaro',
+            model: 'Camaro',
             year: 2016,
         },
         {
