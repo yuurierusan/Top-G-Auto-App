@@ -51,14 +51,14 @@
 
 -   [x] Make a Trello to keep track of things
 -   [x] Make an Entity Relation Diagram
--   [x] Make a compoonent Diagram
+-   [x] Make a component Diagram
 -   [x] Make Read Me
 -   [x] Make Rep & Deploy ReadMe
 -   [ ] Build BackEnd
 -   [ ] Build FrontEnd
 -   [ ] Install Dependencies
 -   [ ] CSS
--   [ ] Come up with a pleasent and user friendly colorway
+-   [ ] Come up with a pleasant and user friendly colorway
 -   [ ] More TBA
 
 ---
