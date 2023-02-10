@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 const MONGODB_API = process.env.MONGODB_KEY
 
 mongoose
