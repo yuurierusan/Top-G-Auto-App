@@ -1,14 +1,14 @@
 const db = require('../db')
-const Cars = require('../models/cars')
+const Projects = require('../models/projects')
 
 // Connect to the database
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-    const cars = []
+    const projects = []
 
-    await Cars.insertMany(cars)
-    console.log('Created some cars!')
+    await Projects.insertMany(projects)
+    console.log('Created some projects!')
 }
 const run = async () => {
     await main()
