@@ -1,9 +1,9 @@
 const { Router } = require('express')
-const controllers = require('./controllers')
+const carController = require('../controllers/cars')
 const router = Router()
 
 router.get('/', (req, res) => res.send('Deez Nuts!'))
 
-router.post('/cars', controllers.createCar)
+router.post('/cars', carController.createCar)
 
 module.exports = router
