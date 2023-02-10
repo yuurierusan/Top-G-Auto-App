@@ -1,10 +1,11 @@
-// const { Schema } = require('mongoose')
-const mongoose = require('mongoose')
+const { default: mongoose } = require('mongoose')
+
+const Schema = mongoose.Schema
 
 const Projects = new Schema(
     {
         title: { type: String, required: true },
-        car: { type: mongoose.Schema.Types.ObjectId, required: true },
+        // car: { type: mongoose.Schema.Types.ObjectId, required: true },
         startDate: { type: String, required: true },
         endDate: { type: String, required: true },
         location: { type: String, required: false },
