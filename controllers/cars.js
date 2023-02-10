@@ -1,8 +1,8 @@
-const Cars = require('../models/cars')
+const Car = require('../models/cars')
 
 const createCar = async (req, res) => {
     try {
-        const car = await new Plant(req.body)
+        const car = await new Car(req.body)
         await car.save()
         return res.status(201).json({
             car,
