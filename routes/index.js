@@ -4,8 +4,9 @@ const commentController = require('../controllers/comments')
 const projectController = require('../controllers/projects')
 const router = Router()
 
-// car controller
 router.get('/', (req, res) => res.send('This is Groot!'))
+
+// car controller
 router.post('/cars', carController.createCar)
 router.get('/cars', carController.getAllCars)
 router.get('/cars/:id', carController.getCarById)
