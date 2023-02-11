@@ -1,22 +1,14 @@
 import { useState, useEffect } from 'react'
+import Nav from '../components/nav/Nav'
+import Header from '../components/header/Header'
 
-const Home = () => (
-    <div>
-        <div className='genres'>
-            <h1>Genres</h1>
-            <section className='container-grid'>
-                {genres.map((genre) => (
-                    <div key={genre.id}>
-                        <Link to={`/view/games/${genre.id}`}>
-                            <GenreCard
-                                name={genre.name}
-                                image={genre.image_background}
-                                gamesCount={genre.games_count}
-                            />
-                        </Link>
-                    </div>
-                ))}
-            </section>
+const Home = () => {
+    return (
+        <div>
+            <div>
+                <Nav />
+                <Header />
+            </div>
         </div>
-    </div>
-)
+    )
+}
