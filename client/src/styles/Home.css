@@ -1,6 +1,16 @@
-.a {
+.home-container {
+    background-color: brown;
+}
+
+.nav-home {
+    background-color: aquamarine;
+}
+
+.header-home {
+    background-color: blue;
+}
+.about-a .cars-a {
+    background-color: blueviolet;
     max-width: 300px;
     max-height: 380px;
-    display: grid;
-    grid-template-columns: max-content;
 }

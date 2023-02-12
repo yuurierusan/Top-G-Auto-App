@@ -1,21 +1,25 @@
-import '../styles/Header.css'
 import '../styles/Home.css'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Header from '../components/Header'
-import AboutCard from '../components/AboutCard'
-import CarsCard from '../components/CarsCard'
+import AboutCard from '../components/CardToAbout'
+import CarsCard from '../components/CardToCars'
 
 const Home = () => {
     return (
-        <div>
+        <div className='home-container'>
+            <div className='nav-home'>
+                <Nav />
+            </div>
             <div className='header-home'>
                 <Header />
             </div>
-            <div className='a'>
+            <div className='about-a'>
                 <Link to={'/about'}>
                     <AboutCard />
                 </Link>
+            </div>
+            <div className='cars-a'>
                 <Link to={'/cars'}>
                     <CarsCard />
                 </Link>

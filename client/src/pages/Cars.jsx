@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
-const Key = process.env.MONGODB_KEY
+import { Link, useParams } from 'react-router-dom'
+import CarCard from '../components/CarCard'
 
 const ViewCars = (props) => {
-
     let { carId } = useParams()
     console.log(carId)
 
@@ -19,17 +18,25 @@ const ViewCars = (props) => {
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getCars()
-    },[carId])
+    }, [carId])
 
     return (
         <div className='car-container'>
-            {cars.map((car) =>(
+            {cars.map((car) => (
                 <div key={car.id}>
-                    <Link to={``
-            )
+                    <Link to={`cars/projects/${car.id}`}>
+                        <CarCard
+                            image={car.image}
+                            make={car.make}
+                            model={car.model}
+                            year={car.year}
+                        />
+                    </Link>
+                </div>
+            ))}
         </div>
     )
 }
-export default Cars
+export default ViewCars

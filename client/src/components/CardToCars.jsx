@@ -1,6 +1,7 @@
+import '../styles/Cards.css'
 const CarsCard = (props) => {
     return (
-        <div className='card car-card' onClick={props.onClick}>
+        <div className='card cars-card' onClick={props.onClick}>
             <div className='img-wrapper'>
                 <img
                     src='https://www.drifted.com/wp-content/uploads/2021/04/initial-d-ae86.jpg'
