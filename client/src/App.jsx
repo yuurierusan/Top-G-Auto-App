@@ -1,10 +1,17 @@
 import { useState } from 'react'
-import './App.css'
-
+import { Routes } from 'react-router-dom'
+import './styles/App.css'
+import Home from './pages/Home'
+import About from './pages/About'
+import Cars from './pages/Cars'
 const App = () => {
     return (
         <div className='App'>
-            <h1>Top G Auto</h1>
+            <Home />
+            <Routes>
+                <Route path='/about' element={<About />} />
+                <Route path='/cars' element={<Cars />} />
+            </Routes>
         </div>
     )
 }
