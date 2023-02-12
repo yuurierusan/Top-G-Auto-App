@@ -1,4 +1,5 @@
-const AboutCard = () => {
+import '../styles/About.css'
+const AboutCard = (props) => {
     return (
         <div className='card about-card' onClick={props.onClick}>
             <div className='img-wrapper'>

@@ -3,7 +3,7 @@ const CarsCard = (props) => {
         <div className='card car-card' onClick={props.onClick}>
             <div className='img-wrapper'>
                 <img
-                    src='https://mrclown.tv/wp-content/uploads/2014/11/MC_SightWords-about.jpg'
+                    src='https://www.drifted.com/wp-content/uploads/2021/04/initial-d-ae86.jpg'
                     alt='img'
                 />
             </div>
