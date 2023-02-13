@@ -11,8 +11,8 @@ const ViewCars = (props) => {
 
     const getCars = async () => {
         try {
-            const response = await axios.get(Key)
-            setCars(response.data)
+            const response = await axios.get('http://localhost:3001/cars')
+            setCars(res.data)
         } catch (e) {
             console.error(e)
         }

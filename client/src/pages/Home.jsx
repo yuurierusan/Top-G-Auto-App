@@ -14,15 +14,17 @@ const Home = () => {
             <div className='header-home'>
                 <Header />
             </div>
-            <div className='about-a'>
-                <Link to={'/about'}>
-                    <AboutCard />
-                </Link>
-            </div>
-            <div className='cars-a'>
-                <Link to={'/cars'}>
-                    <CarsCard />
-                </Link>
+            <div className='link-container'>
+                <div className='about-link'>
+                    <Link to={'/about'}>
+                        <AboutCard />
+                    </Link>
+                </div>
+                <div className='cars-link'>
+                    <Link to={'/cars'}>
+                        <CarsCard />
+                    </Link>
+                </div>
             </div>
         </div>
     )
