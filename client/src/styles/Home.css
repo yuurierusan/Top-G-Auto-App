@@ -4,6 +4,15 @@
 
 .nav-home {
     background-color: aquamarine;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 3em;
+}
+
+.nav-home a {
+    margin: 0 1em;
+    text-decoration: none;
 }
 
 .header-home {
