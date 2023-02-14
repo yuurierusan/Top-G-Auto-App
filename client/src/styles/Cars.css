@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.car-container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.nav-home {
+    order: 1;
+    align-self: stretch;
+    background-color: #212121;
+    text-align: right;
+    max-width: 100vw;
+    max-height: 3em;
+}
+
+.cars-a {
+    order: 2;
+    max-width: 300px;
+    max-height: 380px;
+}

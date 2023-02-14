@@ -7,7 +7,7 @@ const router = Router()
 router.get('/', (req, res) => res.send('This is Groot!'))
 
 // car controller
-router.post('/cars/create', carController.createCar)
+router.post('/cars/', carController.createCar)
 router.get('/cars', carController.getAllCars)
 router.get('/cars/:id', carController.getCarById)
 router.put('/cars/:id', carController.updateCar)
@@ -21,8 +21,9 @@ router.put('/comments/:id', commentController.updateComment)
 router.delete('/comments/:id', commentController.deleteComment)
 
 // project controller
-router.post('/projects', projectController.createProject)
+router.post('/projects/:carId', projectController.createProject)
 router.get('/projects', projectController.getAllProjects)
+router.get('/projects/car/:carId', projectController.getProjectsByCarId)
 router.get('/projects/:id', projectController.getProjectById)
 router.put('/projects/:id', projectController.updateProject)
 router.delete('/projects/:id', projectController.deleteProject)

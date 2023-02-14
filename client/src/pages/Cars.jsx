@@ -1,18 +1,20 @@
+import '../styles/Cars.css'
+
+import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link, useParams } from 'react-router-dom'
 import CarCard from '../components/CarCard'
+import Nav from '../components/Nav'
 
 const ViewCars = (props) => {
     let { carId } = useParams()
-    console.log(carId)
 
     const [cars, setCars] = useState([])
 
     const getCars = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/cars')
-            setCars(res.data)
+            const res = await axios.get('http://localhost:3001/cars')
+            setCars(res.data.cars)
         } catch (e) {
             console.error(e)
         }
@@ -24,9 +26,12 @@ const ViewCars = (props) => {
 
     return (
         <div className='car-container'>
+            <div className='nav-home'>
+                <Nav />
+            </div>
             {cars.map((car) => (
-                <div key={car.id}>
-                    <Link to={`cars/projects/${car.id}`}>
+                <div className='cars-a' key={car._id}>
+                    <Link to={`/cars/${car._id}`}>
                         <CarCard
                             image={car.image}
                             make={car.make}

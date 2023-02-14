@@ -13,6 +13,7 @@ const seedProjects = async () => {
             location: 'Detroit, MI',
             content:
                 'In 2019 me and my friends got together and bored my 5.7 LS1 into a 6.0. Now I have the fastest car in the city!',
+            car: '63e676b2aa84218a71e24aac',
         },
         {
             title: 'High-Performance Engine Rebuild',
@@ -21,6 +22,7 @@ const seedProjects = async () => {
             location: 'New York, NY',
             content:
                 'I rebuilt my engine with high-performance components, making my car a true powerhouse on the road.',
+            car: '63e676b2aa84218a71e24aac',
         },
         {
             title: 'Suspension Upgrade',

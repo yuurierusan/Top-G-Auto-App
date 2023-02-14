@@ -1,6 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .about-h1 {
     background-color: blueviolet;
 }
+
 .about-h3 {
     background-color: aqua;
 }

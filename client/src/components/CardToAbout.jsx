@@ -1,5 +1,5 @@
 import '../styles/Cards.css'
-const AboutCard = (props) => {
+const CardToAbout = (props) => {
     return (
         <div className='card about-card' onClick={props.onClick}>
             <div className='img-wrapper'>
@@ -16,4 +16,4 @@ const AboutCard = (props) => {
     )
 }
 
-export default AboutCard
+export default CardToAbout

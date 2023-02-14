@@ -1,5 +1,5 @@
 import '../styles/Cards.css'
-const CarsCard = (props) => {
+const CardToCars = (props) => {
     return (
         <div className='card cars-card' onClick={props.onClick}>
             <div className='img-wrapper'>
@@ -16,4 +16,4 @@ const CarsCard = (props) => {
     )
 }
 
-export default CarsCard
+export default CardToCars

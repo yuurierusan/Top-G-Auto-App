@@ -2,8 +2,8 @@ import '../styles/Home.css'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Header from '../components/Header'
-import AboutCard from '../components/CardToAbout'
-import CarsCard from '../components/CardToCars'
+import CardToCars from '../components/CardToCars'
+import CardToAbout from '../components/CardToAbout'
 
 const Home = () => {
     return (
@@ -17,12 +17,12 @@ const Home = () => {
             <div className='link-container'>
                 <div className='about-link'>
                     <Link to={'/about'}>
-                        <AboutCard />
+                        <CardToAbout />
                     </Link>
                 </div>
                 <div className='cars-link'>
                     <Link to={'/cars'}>
-                        <CarsCard />
+                        <CardToCars />
                     </Link>
                 </div>
             </div>
