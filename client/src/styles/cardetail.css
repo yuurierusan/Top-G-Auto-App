@@ -1,12 +1,9 @@
 .details-container {
+    color: #fff;
+    background-color: #444444;
     text-align: center;
     justify-content: center;
     align-items: center;
-}
-
-.create-project {
-    max-width: 100px;
-    max-height: 100px;
 }
 
 .button-link {

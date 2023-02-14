@@ -2,8 +2,9 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import ViewCars from './pages/Cars'
-import CreateProject from './components/ProjectForm'
 import CarDetail from './pages/CarDetail'
+import CreateProject from './components/ProjectForm'
+import CreateComment from './components/CommentForm'
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                     path='/cars/project/${car._id}'
                     element={<CreateProject />}
                 />
+                <Route path='/project/${car._id}' element={<CreateComment />} />
             </Routes>
         </div>
     )

@@ -51,6 +51,12 @@ const CarDetail = () => {
                     Create New Project
                 </a>
             </div>
+            <br />
+            <div className='create-comment'>
+                <a href='/comments/:projectId' className='button-link'>
+                    Create New Comment
+                </a>
+            </div>
         </div>
     )
 }

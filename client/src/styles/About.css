@@ -4,18 +4,22 @@
 }
 
 .about-page {
+    background-color: #444444;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .about-heading {
+    color: #eee;
+
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .about-description {
+    color: #eee;
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 30px;

@@ -1,4 +1,4 @@
-import '../styles/Cards.css'
+import '../styles/cards.css'
 const CardToCars = (props) => {
     return (
         <div className='card cars-card' onClick={props.onClick}>
