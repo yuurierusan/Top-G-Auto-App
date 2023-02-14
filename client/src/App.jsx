@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import ViewCars from './pages/Cars'
-import Project from './pages/Project'
+import CreateProject from './pages/CreateProject'
 import CarDetail from './pages/CarDetail'
 
 const App = () => {
@@ -13,7 +13,10 @@ const App = () => {
                 <Route path='/about' element={<About />} />
                 <Route path='/cars' element={<ViewCars />} />
                 <Route path='/cars/:carId' element={<CarDetail />} />
-                <Route path='/cars/project/${car._id}' element={<Project />} />
+                <Route
+                    path='/cars/project/${car._id}'
+                    element={<CreateProject />}
+                />
             </Routes>
         </div>
     )

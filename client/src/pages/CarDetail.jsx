@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { Form } from 'react-router-dom'
+import Nav from '../components/Nav'
+import CreateProject from './CreateProject'
+import { Link } from 'react-router-dom'
+import '../styles/cardetail.css'
 
 const CarDetail = () => {
     let { carId } = useParams()
@@ -11,7 +14,6 @@ const CarDetail = () => {
         const res = await axios.get(
             `http://localhost:3001/projects/car/${carId}`
         )
-        console.log(res.data)
         setProjects(res.data)
         setCar(res.data[0].car)
     }
@@ -21,18 +23,34 @@ const CarDetail = () => {
     }, [carId])
 
     return (
-        <div>
-            {car.make}
-            {car.model}
-            {car.year}
-            {projects?.map((project) => (
-                <div>
-                    {project.title}
-                    {project.content}
-                </div>
-            ))}
-            <button>Create Comment</button>
-            <button>Create Project</button>
+        <div className='details-container'>
+            <div className='nav-home'>
+                <Nav />
+            </div>
+            <h1>{car.make} Project</h1>
+            <img src={car.image} alt='car' />
+            <h3>
+                {car.year} {car.make}
+            </h3>
+            <h5>{car.model}</h5>
+            <div className='project-map'>
+                {projects?.map((project) => (
+                    <div key={project._id}>
+                        <p>
+                            Title: {project.title} <br />
+                            {project.content}
+                            {project.startDate}
+                            {project.endDate}
+                            {project.location}
+                        </p>
+                    </div>
+                ))}
+            </div>
+            <div className='create-project'>
+                <Link to={'/projects/${car._id}'}>
+                    <CreateProject />
+                </Link>
+            </div>
         </div>
     )
 }

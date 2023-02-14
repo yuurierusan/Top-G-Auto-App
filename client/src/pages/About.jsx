@@ -1,15 +1,16 @@
 import Nav from '../components/Nav'
-import '../styles/About.css'
+import '../styles/about.css'
 const About = () => {
     return (
-        <div className='about-content'>
+        <div className='about-page'>
             <div className='nav-home'>
                 <Nav />
             </div>
-            <div className='about-h1'>
-                <h1>About</h1>
+            <div className='about-heading'>
+                <h1>About Top G Auto</h1>
             </div>
-            <div className='about-h3'>
+            <div className='about-image'></div>
+            <div className='about-description'>
                 <h3>
                     "Welcome to our car club! We are a community of automobile
                     enthusiasts who share a passion for all things automotive.

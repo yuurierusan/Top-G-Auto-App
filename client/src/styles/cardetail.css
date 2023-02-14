@@ -1,0 +1,11 @@
+.details-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-project {
+    background-color: red;
+    max-width: 100px;
+    max-height: 100px;
+}
