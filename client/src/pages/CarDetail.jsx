@@ -47,7 +47,7 @@ const CarDetail = () => {
                 ))}
             </div>
             <div className='create-project'>
-                <a href='/projects/:carId' className='button-link'>
+                <a href={`/projects/${carId}`} className='button-link'>
                     Create New Project
                 </a>
             </div>
