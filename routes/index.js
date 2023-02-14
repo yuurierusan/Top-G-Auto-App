@@ -14,7 +14,7 @@ router.put('/cars/:id', carController.updateCar)
 router.delete('/cars/:id', carController.deleteCar)
 
 // comment controller
-router.post('/comments', commentController.createComment)
+router.post('/comments/:projectId', commentController.createComment)
 router.get('/comments', commentController.getAllComments)
 router.get('/comments/:id', commentController.getCommentById)
 router.put('/comments/:id', commentController.updateComment)

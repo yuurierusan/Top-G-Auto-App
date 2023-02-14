@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import ViewCars from './pages/Cars'
-import CreateProject from './pages/CreateProject'
+import CreateProject from './components/ProjectForm'
 import CarDetail from './pages/CarDetail'
 
 const App = () => {

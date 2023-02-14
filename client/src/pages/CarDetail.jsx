@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Nav from '../components/Nav'
-import CreateProject from './CreateProject'
+import CreateProject from '../components/ProjectForm'
 import { Link } from 'react-router-dom'
 import '../styles/cardetail.css'
 
@@ -37,19 +37,19 @@ const CarDetail = () => {
                 {projects?.map((project) => (
                     <div key={project._id}>
                         <p>
-                            Title: {project.title} <br />
-                            {project.content}
-                            {project.startDate}
-                            {project.endDate}
+                            {project.title} <br />
+                            Duration: {project.startDate} - {project.endDate}{' '}
+                            <br />
+                            {project.content} <br />
                             {project.location}
                         </p>
                     </div>
                 ))}
             </div>
             <div className='create-project'>
-                <Link to={'/projects/${car._id}'}>
-                    <CreateProject />
-                </Link>
+                <a href='/projects/:carId' className='button-link'>
+                    Create New Project
+                </a>
             </div>
         </div>
     )
