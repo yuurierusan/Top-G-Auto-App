@@ -2,14 +2,18 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import '../styles/cardetail.css'
+import { updateComment } from '../../../controllers/comments'
 
 const CarDetail = () => {
     let { carId } = useParams()
+    let { projectId } = useParams()
+    let { commentId } = useParams()
+
     const [car, setCar] = useState({})
     const [projects, setProjects] = useState([])
     const [comments, setComments] = useState([])
 
-    const fetchDetails = async () => {
+    const getDetails = async () => {
         const res = await axios.get(
             `http://localhost:3001/app/projects/car/${carId}`
         )
@@ -17,17 +21,48 @@ const CarDetail = () => {
         setCar(res.data[0].car)
     }
 
-    const fetchComments = async () => {
-        const response = await axios.get(
+    const getComments = async () => {
+        const resTwo = await axios.get(
             `http://localhost:3001/app/comments/car/${carId}`
         )
-        setComments(response.data.comment)
+        setComments(resTwo.data.comment)
     }
 
+    const updateProject = async () => {
+        const resFive = await axios.get(
+            `http://localhost:3001/app/projects/delete/${projectId}`
+        )
+        console.log(resThree)
+    }
+
+    const updateComment = async () => {
+        const resFive = await axios.get(
+            `http://localhost:3001/app/comments/delete/${commentId}`
+        )
+        console.log(resFour)    
+    }
+
+    const deleteProject = async () => {
+        const resFive = await axios.get(
+            `http://localhost:3001/app/projects/delete/${projectId}`
+        )
+        console.log(resThree)
+    }
+
+    const deleteComment = async () => {
+        const resFive = await axios.get(
+            `http://localhost:3001/app/comments/delete/${commentId}`
+        )
+        console.log(resFour)    }
+
     useEffect(() => {
-        fetchDetails()
-        fetchComments()
-    }, [carId])
+        getDetails()
+        getComments()
+        updateProject()
+        updateComment()
+        deleteProject()
+        deleteComment()
+    }, [])
 
     return (
         <div className='details-container'>
@@ -52,7 +87,9 @@ const CarDetail = () => {
                             <br />
                             Location: {project.location}
                         </p>
-                        
+                        <button className='button-link'>Delete Project</button>
+                    
+                
                     </div>
                 ))}
             </div>
@@ -74,6 +111,7 @@ const CarDetail = () => {
                             Comment:{comment.comment}
                             <br />
                         </p>
+                        <button className='button-link'>Delete Comment</button>
                     </div>
                 ))}
             </div>
