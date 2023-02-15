@@ -23,7 +23,7 @@ const CarDetail = () => {
             `http://localhost:3001/comments/car/${carId}`
         )
         console.log(response.data)
-        setComments(response.data)
+        setComments(response.data.comment)
     }
 
     useEffect(() => {
