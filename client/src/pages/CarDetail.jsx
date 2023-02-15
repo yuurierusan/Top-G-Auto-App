@@ -39,7 +39,8 @@ const CarDetail = () => {
                 {car.year} {car.make}
             </h3>
             <h5>{car.model}</h5>
-
+            <br />
+            <h3>Projects</h3>
             <div className='project-map'>
                 {projects?.map((project) => (
                     <div key={project._id}>
@@ -63,6 +64,7 @@ const CarDetail = () => {
                 </a>
             </div>
             <br />
+            <h3>Comments</h3>
             <div className='comment-map'>
                 {comments?.map((comment) => (
                     <div key={comment._id}>
