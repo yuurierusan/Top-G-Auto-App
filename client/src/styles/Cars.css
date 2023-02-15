@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .car-container {
@@ -23,6 +24,11 @@
 
 .cars-a {
     order: 2;
+    max-width: 300px;
+    max-height: 380px;
+}
+
+.cars-s a {
     max-width: 300px;
     max-height: 380px;
 }

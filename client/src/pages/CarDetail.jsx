@@ -10,19 +10,13 @@ const CarDetail = () => {
     const [comments, setComments] = useState([])
 
     const fetchDetails = async () => {
-        const res = await axios.get(
-            `http://localhost:3001/projects/car/${carId}`
-        )
-        console.log(res.data)
+        const res = await axios.get(`/projects/car/${carId}`)
         setProjects(res.data)
         setCar(res.data[0].car)
     }
 
     const fetchComments = async () => {
-        const response = await axios.get(
-            `http://localhost:3001/comments/car/${carId}`
-        )
-        console.log(response.data)
+        const response = await axios.get(`/comments/car/${carId}`)
         setComments(response.data.comment)
     }
 

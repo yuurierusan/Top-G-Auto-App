@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
-const MONGODB_API = process.env.MONGODB_KEY
+const MONGODB = process.env.MONGODB_URI
 
 mongoose
-    .connect(MONGODB_API)
+    .connect(MONGODB)
     .then(() => {
         console.log('Successfully connected to MongoDB.')
     })

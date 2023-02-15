@@ -12,7 +12,7 @@ const ViewCars = (props) => {
 
     const getCars = async () => {
         try {
-            const res = await axios.get('http://localhost:3001/cars')
+            const res = await axios.get('/cars')
             setCars(res.data.cars)
         } catch (e) {
             console.error(e)
@@ -26,7 +26,7 @@ const ViewCars = (props) => {
     return (
         <div className='car-container'>
             <a href={`/cars/create`} className='button-link'>
-                Create New Car
+                Add Your Ride
             </a>
             {cars.map((car) => (
                 <div className='cars-a' key={car._id}>
