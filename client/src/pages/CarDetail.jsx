@@ -44,25 +44,33 @@ const CarDetail = () => {
                 {projects?.map((project) => (
                     <div key={project._id}>
                         <p>
-                            {project.title} <br />
-                            Duration: {project.startDate} - {project.endDate}{' '}
                             <br />
-                            {project.content} <br />
-                            {project.location}
+                            Title: {project.title}
+                            <br />
+                            Duration: {project.startDate} - {project.endDate}
+                            <br />
+                            Content: {project.content}
+                            <br />
+                            Location: {project.location}
                         </p>
                     </div>
                 ))}
             </div>
+            <br />
             <div className='comment-map'>
                 {comments?.map((comment) => (
                     <div key={comment._id}>
                         <p>
-                            Name: {comment.name} <br />
+                            <br />
+                            Name: {comment.name}
+                            <br />
                             Comment:{comment.comment}
+                            <br />
                         </p>
                     </div>
                 ))}
             </div>
+            <br />
             <div className='create-project'>
                 <a href={`/projects/${carId}`} className='button-link'>
                     Create New Project

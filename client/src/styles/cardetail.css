@@ -6,6 +6,15 @@
     align-items: center;
 }
 
+.comment-map {
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+.project-map {
+    border: 1px solid #4ea0f8;
+    border-radius: 5px;
+}
+
 .button-link {
     display: inline-block;
     padding: 12px 24px;
