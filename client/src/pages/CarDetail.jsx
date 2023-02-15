@@ -57,6 +57,12 @@ const CarDetail = () => {
                 ))}
             </div>
             <br />
+            <div className='create-project'>
+                <a href={`/projects/${carId}`} className='button-link'>
+                    Create New Project
+                </a>
+            </div>
+            <br />
             <div className='comment-map'>
                 {comments?.map((comment) => (
                     <div key={comment._id}>
@@ -69,12 +75,6 @@ const CarDetail = () => {
                         </p>
                     </div>
                 ))}
-            </div>
-            <br />
-            <div className='create-project'>
-                <a href={`/projects/${carId}`} className='button-link'>
-                    Create New Project
-                </a>
             </div>
             <br />
             <div className='create-comment'>
