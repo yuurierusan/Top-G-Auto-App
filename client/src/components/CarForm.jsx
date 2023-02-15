@@ -15,7 +15,7 @@ const CarForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post(`http://localhost:3001/cars/create`, formState)
+        await axios.post(`/cars/create`, formState)
         setFormState(initialState)
     }
 
