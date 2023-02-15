@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
+
 const Schema = mongoose.Schema
+
 const Cars = new Schema(
     {
         image: { type: String, required: false },
@@ -7,7 +9,6 @@ const Cars = new Schema(
         make: { type: String, required: true },
         model: { type: String, required: true },
         year: { type: Number, required: false },
-        project: { type: Schema.Types.ObjectId, ref: 'project' },
     },
     { timestamps: true }
 )

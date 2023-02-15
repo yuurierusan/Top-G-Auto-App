@@ -1,18 +1,19 @@
 import axios from 'axios'
-
-const CommentForm = ({ newComment }) => {
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+const CommentForm = () => {
     const initialState = {
         name: '',
-        message: '',
+        comment: '',
     }
 
+    const { carId } = useParams()
     const [formState, setFormState] = useState(initialState)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post('/comments/:projectId', formState)
+        await axios.post(`http://localhost:3001/comments/${carId}`, formState)
         setFormState(initialState)
-        newComment()
     }
 
     const handleChange = (e) =>
@@ -28,11 +29,11 @@ const CommentForm = ({ newComment }) => {
                 value={formState.name}
             />
             <textarea
-                id='message'
+                id='comment'
                 cols='30'
                 rows='10'
                 onChange={handleChange}
-                value={formState.message}></textarea>
+                value={formState.comment}></textarea>
             <button type='submit'>Create</button>
         </form>
     )

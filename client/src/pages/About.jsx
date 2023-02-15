@@ -1,11 +1,7 @@
-import Nav from '../components/Nav'
 import '../styles/about.css'
 const About = () => {
     return (
         <div className='about-page'>
-            <div className='nav-home'>
-                <Nav />
-            </div>
             <div className='about-heading'>
                 <h1>About Top G Auto</h1>
             </div>

@@ -1,11 +1,11 @@
 import CommentForm from '../components/CommentForm'
 
-const CommentForm = () => {
+const CreateComment = () => {
     return (
         <div>
-            <Form newComment={newComment} />
+            <CommentForm />
         </div>
     )
 }
 
-export default CommentForm
+export default CreateComment

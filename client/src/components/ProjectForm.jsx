@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import '../styles/projectform.css'
 
-const ProjectForm = ({ newProject }) => {
+const ProjectForm = () => {
     const initialState = {
         title: '',
         startDate: '',
@@ -20,7 +20,6 @@ const ProjectForm = ({ newProject }) => {
         e.preventDefault()
         await axios.post(`http://localhost:3001/projects/${carId}`, formState)
         setFormState(initialState)
-        newProject()
     }
 
     const handleChange = (e) =>

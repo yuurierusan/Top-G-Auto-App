@@ -4,7 +4,6 @@ import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import CarCard from '../components/CarCard'
-import Nav from '../components/Nav'
 
 const ViewCars = (props) => {
     let { carId } = useParams()
@@ -26,9 +25,9 @@ const ViewCars = (props) => {
 
     return (
         <div className='car-container'>
-            <div className='nav-home'>
-                <Nav />
-            </div>
+            <a href={`/cars/create`} className='button-link'>
+                Create New Car
+            </a>
             {cars.map((car) => (
                 <div className='cars-a' key={car._id}>
                     <Link to={`/cars/${car._id}`}>

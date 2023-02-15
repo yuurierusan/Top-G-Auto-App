@@ -1,11 +1,11 @@
 import ProjectForm from '../components/ProjectForm'
 
-const ProjectForm = () => {
+const CreateProject = () => {
     return (
         <div>
-            <Form newProject={newProject} />
+            <ProjectForm />
         </div>
     )
 }
 
-export default ProjectForm
+export default CreateProject

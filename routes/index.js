@@ -7,16 +7,16 @@ const router = Router()
 router.get('/', (req, res) => res.send('This is Groot!'))
 
 // car controller
-router.post('/cars/', carController.createCar)
+router.post('/cars/create', carController.createCar)
 router.get('/cars', carController.getAllCars)
 router.get('/cars/:id', carController.getCarById)
 router.put('/cars/:id', carController.updateCar)
 router.delete('/cars/:id', carController.deleteCar)
 
 // comment controller
-router.post('/comments/:projectId', commentController.createComment)
+router.get('/comments/car/:carId', commentController.getCommentById)
+router.post('/comments/:carId', commentController.createComment)
 router.get('/comments', commentController.getAllComments)
-router.get('/comments/:id', commentController.getCommentById)
 router.put('/comments/:id', commentController.updateComment)
 router.delete('/comments/:id', commentController.deleteComment)
 
