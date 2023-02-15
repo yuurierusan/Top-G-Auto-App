@@ -28,14 +28,14 @@ const CarDetail = () => {
         setComments(resTwo.data.comment)
     }
 
-    const updateProject = async () => {
+    const handleUpdate = async () => {
         const resFive = await axios.get(
             `http://localhost:3001/app/projects/delete/${projectId}`
         )
         console.log(resThree)
     }
 
-    const updateComment = async () => {
+    const handleDelete = async () => {
         const resFive = await axios.get(
             `http://localhost:3001/app/comments/delete/${commentId}`
         )
