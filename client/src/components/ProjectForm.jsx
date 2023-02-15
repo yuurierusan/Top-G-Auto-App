@@ -18,7 +18,10 @@ const ProjectForm = () => {
     console.log(carId)
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await axios.post(`/projects/${carId}`, formState)
+        await axios.post(
+            `http://localhost:3001/app/projects/${carId}`,
+            formState
+        )
         setFormState(initialState)
     }
 
