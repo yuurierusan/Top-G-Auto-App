@@ -30,7 +30,7 @@ const ViewCars = (props) => {
             </a>
             {cars.map((car) => (
                 <div className='cars-a' key={car._id}>
-                    <Link to={`/cars/${car._id}`}>
+                    <Link to={`/car/detail/${car._id}`}>
                         <CarCard
                             image={car.image}
                             make={car.make}

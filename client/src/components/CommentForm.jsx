@@ -13,7 +13,7 @@ const CommentForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await axios.post(
-            `http://localhost:3001/app/comments/${carId}`,
+            `http://localhost:3001/app/comments/create/${carId}`,
             formState
         )
         setFormState(initialState)

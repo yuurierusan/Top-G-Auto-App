@@ -1,31 +1,33 @@
 const { Router } = require('express')
-const carController = require('../controllers/cars')
-const commentController = require('../controllers/comments')
-const projectController = require('../controllers/projects')
 const router = Router()
+const carController = require('../controllers/cars')
+const projectController = require('../controllers/projects')
+const commentController = require('../controllers/comments')
 
-router.get('/', (req, res) => res.send('This is Groot!'))
+router.get('/app', (req, res) => res.send('This is Groot!'))
 
-// car controller
+// post controllers
 router.post('/cars/create', carController.createCar)
+router.post('/projects/create/:carId', projectController.createProject)
+router.post('/comments/create/:carId', commentController.createComment)
+
+// get controllers
 router.get('/cars', carController.getAllCars)
 router.get('/cars/:id', carController.getCarById)
-router.put('/cars/:id', carController.updateCar)
-router.delete('/cars/:id', carController.deleteCar)
-
-// comment controller
-router.get('/comments/car/:carId', commentController.getCommentById)
-router.post('/comments/:carId', commentController.createComment)
-router.get('/comments', commentController.getAllComments)
-router.put('/comments/:id', commentController.updateComment)
-router.delete('/comments/:id', commentController.deleteComment)
-
-// project controller
-router.post('/projects/:carId', projectController.createProject)
 router.get('/projects', projectController.getAllProjects)
 router.get('/projects/car/:carId', projectController.getProjectsByCarId)
 router.get('/projects/:id', projectController.getProjectById)
-router.put('/projects/:id', projectController.updateProject)
-router.delete('/projects/:id', projectController.deleteProject)
+router.get('/comments', commentController.getAllComments)
+router.get('/comments/car/:carId', commentController.getCommentById)
+
+// put controller
+router.put('/cars/edit/:id', carController.updateCar)
+router.put('/projects/edit/:id', projectController.updateProject)
+router.put('/comments/edit/:id', commentController.updateComment)
+
+// delete controllers
+router.delete('/cars/delete/:id', carController.deleteCar)
+router.delete('/projects/delete/:id', projectController.deleteProject)
+router.delete('/comments/delete/:id', commentController.deleteComment)
 
 module.exports = router

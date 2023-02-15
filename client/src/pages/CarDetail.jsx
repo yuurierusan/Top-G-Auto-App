@@ -52,12 +52,13 @@ const CarDetail = () => {
                             <br />
                             Location: {project.location}
                         </p>
+                        
                     </div>
                 ))}
             </div>
             <br />
             <div className='create-project'>
-                <a href={`/projects/${carId}`} className='button-link'>
+                <a href={`/projects/create/${carId}`} className='button-link'>
                     Create New Project
                 </a>
             </div>
@@ -78,7 +79,7 @@ const CarDetail = () => {
             </div>
             <br />
             <div className='create-comment'>
-                <a href={`/comments/${carId}`} className='button-link'>
+                <a href={`/comments/create/${carId}`} className='button-link'>
                     Create New Comment
                 </a>
             </div>

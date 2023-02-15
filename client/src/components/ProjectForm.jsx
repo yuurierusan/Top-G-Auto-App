@@ -19,7 +19,7 @@ const ProjectForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await axios.post(
-            `http://localhost:3001/app/projects/${carId}`,
+            `http://localhost:3001/app/projects/create/${carId}`,
             formState
         )
         setFormState(initialState)
