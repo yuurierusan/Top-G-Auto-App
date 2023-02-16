@@ -1,10 +1,8 @@
+import '../styles/cardetail.css'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-
 import axios from 'axios'
-import '../styles/cardetail.css'
-// import { updateComment } from '../../../controllers/comments'
 
 const CarDetail = () => {
     let { carId } = useParams()

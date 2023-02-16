@@ -1,8 +1,8 @@
+import '../styles/commentform.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
-import '../styles/form.css'
 
 const CommentForm = () => {
     const navigate = useNavigate()
