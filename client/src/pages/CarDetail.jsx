@@ -1,24 +1,28 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 import axios from 'axios'
 import '../styles/cardetail.css'
-import { updateComment } from '../../../controllers/comments'
+// import { updateComment } from '../../../controllers/comments'
 
 const CarDetail = () => {
     let { carId } = useParams()
-    let { projectId } = useParams()
-    let { commentId } = useParams()
 
     const [car, setCar] = useState({})
     const [projects, setProjects] = useState([])
     const [comments, setComments] = useState([])
 
-    const getDetails = async () => {
-        const res = await axios.get(
+    const getCar = async () => {
+        const res = await axios.get(`http://localhost:3001/app/cars/${carId}`)
+        setCar(res.data.car)
+    }
+
+    const getProjects = async () => {
+        const resTwo = await axios.get(
             `http://localhost:3001/app/projects/car/${carId}`
         )
-        setProjects(res.data)
-        setCar(res.data[0].car)
+        setProjects(resTwo.data)
     }
 
     const getComments = async () => {
@@ -28,40 +32,44 @@ const CarDetail = () => {
         setComments(resTwo.data.comment)
     }
 
-    const handleUpdate = async () => {
-        const resFive = await axios.get(
-            `http://localhost:3001/app/projects/delete/${projectId}`
+    const updateProject = async () => {}
+
+    const updateComments = async () => {}
+
+    const deleteProject = async (project) => {
+        console.log(project)
+        await axios.delete(
+            `http://localhost:3001/app/projects/delete/${project._id}`
         )
-        console.log(resThree)
+        try {
+            const res = await axios.get(
+                `http://localhost:3001/app/projects/car/${carId}`
+            )
+            setProjects(res.data)
+        } catch (e) {
+            console.error('Error Deleting Project', e)
+        }
     }
 
-    const handleDelete = async () => {
-        const resFive = await axios.get(
-            `http://localhost:3001/app/comments/delete/${commentId}`
+    const deleteComment = async (comment) => {
+        console.log(comment)
+        await axios.delete(
+            `http://localhost:3001/app/comments/delete/${comment._id}`
         )
-        console.log(resFour)    
+        try {
+            const resTwo = await axios.get(
+                `http://localhost:3001/app/comments/car/${carId}`
+            )
+            setComments(resTwo.data.comment)
+        } catch (e) {
+            console.error('Error Deleting Comment', e)
+        }
     }
-
-    const deleteProject = async () => {
-        const resFive = await axios.get(
-            `http://localhost:3001/app/projects/delete/${projectId}`
-        )
-        console.log(resThree)
-    }
-
-    const deleteComment = async () => {
-        const resFive = await axios.get(
-            `http://localhost:3001/app/comments/delete/${commentId}`
-        )
-        console.log(resFour)    }
 
     useEffect(() => {
-        getDetails()
+        getCar()
+        getProjects()
         getComments()
-        updateProject()
-        updateComment()
-        deleteProject()
-        deleteComment()
     }, [])
 
     return (
@@ -75,7 +83,7 @@ const CarDetail = () => {
             <br />
             <h3>Projects</h3>
             <div className='project-map'>
-                {projects?.map((project) => (
+                {projects.map((project) => (
                     <div key={project._id}>
                         <p>
                             <br />
@@ -87,9 +95,18 @@ const CarDetail = () => {
                             <br />
                             Location: {project.location}
                         </p>
-                        <button className='button-link'>Delete Project</button>
-                    
-                
+                        <Link
+                            to={`/project/edit/${project._id}`}
+                            state={{ project: project }}>
+                            <button className='button-link'>
+                                Edit Project
+                            </button>
+                        </Link>
+                        <button
+                            className='button-link'
+                            onClick={() => deleteProject(project)}>
+                            Delete Project
+                        </button>
                     </div>
                 ))}
             </div>
@@ -102,7 +119,7 @@ const CarDetail = () => {
             <br />
             <h3>Comments</h3>
             <div className='comment-map'>
-                {comments?.map((comment) => (
+                {comments.map((comment) => (
                     <div key={comment._id}>
                         <p>
                             <br />
@@ -111,7 +128,18 @@ const CarDetail = () => {
                             Comment:{comment.comment}
                             <br />
                         </p>
-                        <button className='button-link'>Delete Comment</button>
+                        <Link
+                            to={`/comment/edit/${comment._id}`}
+                            state={{ comment: comment }}>
+                            <button className='button-link'>
+                                Edit Comment
+                            </button>
+                        </Link>
+                        <button
+                            className='button-link'
+                            onClick={() => deleteComment(comment)}>
+                            Delete Comment
+                        </button>
                     </div>
                 ))}
             </div>

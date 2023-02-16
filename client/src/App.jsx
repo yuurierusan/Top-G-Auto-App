@@ -7,6 +7,8 @@ import CarDetail from './pages/CarDetail'
 import CreateCar from './pages/CreateCar'
 import CreateProject from './components/ProjectForm'
 import CreateComment from './components/CommentForm'
+import EditComment from './pages/EditComment'
+import EditProject from './pages/EditProject'
 
 const App = () => {
     return (
@@ -20,8 +22,22 @@ const App = () => {
                 <Route path='/cars' element={<ViewCars />} />
                 <Route path='/car/detail/:carId' element={<CarDetail />} />
                 <Route path='/cars/create' element={<CreateCar />} />
-                <Route path='/projects/create/:carId' element={<CreateProject />} />
-                <Route path='/comments/create/:carId' element={<CreateComment />} />
+                <Route
+                    path='/projects/create/:carId'
+                    element={<CreateProject />}
+                />
+                <Route
+                    path='/comments/create/:carId'
+                    element={<CreateComment />}
+                />
+                <Route
+                    path='/comment/edit/:commentId/'
+                    element={<EditComment />}
+                />
+                <Route
+                    path='/project/edit/:projectId/'
+                    element={<EditProject />}
+                />
             </Routes>
         </div>
     )
