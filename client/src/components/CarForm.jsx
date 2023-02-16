@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const CarForm = () => {
+    const navigate = useNavigate()
     const initialState = {
         image: '',
         owner: '',
@@ -17,6 +18,7 @@ const CarForm = () => {
         e.preventDefault()
         await axios.post(`http://localhost:3001/app/cars/create`, formState)
         setFormState(initialState)
+        navigate(`/cars`)
     }
 
     const handleChange = (e) =>
@@ -25,15 +27,17 @@ const CarForm = () => {
     return (
         <div className='form-container'>
             <form onSubmit={handleSubmit}>
-                <label htmlFor='image'>Image:</label>
+                <label htmlFor='image'>Image: </label>
                 <input type='file' id='image' onChange={handleChange} />
-                <label htmlFor='owner'>Owner:</label>
+                <br />
+                <label htmlFor='owner'>Owner: </label>
                 <input
                     type='text'
                     id='owner'
                     onChange={handleChange}
                     value={formState.owner}
                 />
+                <br />
                 <label htmlFor='make'>Make:</label>
                 <input
                     type='text'
@@ -41,6 +45,7 @@ const CarForm = () => {
                     onChange={handleChange}
                     value={formState.make}
                 />
+                <br />
                 <label htmlFor='model'>Model:</label>
                 <input
                     type='text'
@@ -48,6 +53,7 @@ const CarForm = () => {
                     onChange={handleChange}
                     value={formState.model}
                 />
+                <br />
                 <label htmlFor='year'>Year:</label>
                 <input
                     type='text'
@@ -55,6 +61,7 @@ const CarForm = () => {
                     onChange={handleChange}
                     value={formState.year}
                 />
+                <br />
                 <button type='submit'>Create</button>
             </form>
         </div>

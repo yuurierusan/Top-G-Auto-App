@@ -1,7 +1,11 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import '../styles/form.css'
+
 const CommentForm = () => {
+    const navigate = useNavigate()
     const initialState = {
         name: '',
         comment: '',
@@ -17,13 +21,14 @@ const CommentForm = () => {
             formState
         )
         setFormState(initialState)
+        navigate(`/car/detail/${carId}`)
     }
 
     const handleChange = (e) =>
         setFormState({ ...formState, [e.target.id]: e.target.value })
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className='form' onSubmit={handleSubmit}>
             <label htmlFor='name'>Name:</label>
             <input
                 type='text'
@@ -31,12 +36,14 @@ const CommentForm = () => {
                 onChange={handleChange}
                 value={formState.name}
             />
+            <br />
             <textarea
                 id='comment'
                 cols='30'
-                rows='10'
+                rows='2'
                 onChange={handleChange}
                 value={formState.comment}></textarea>
+            <br />
             <button type='submit'>Create</button>
         </form>
     )

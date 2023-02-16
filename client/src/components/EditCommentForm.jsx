@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 const EditCommentForm = ({ comment }) => {
@@ -37,7 +36,7 @@ const EditCommentForm = ({ comment }) => {
             <textarea
                 id='comment'
                 cols='30'
-                rows='10'
+                rows='2'
                 onChange={handleChange}
                 value={formState.comment}></textarea>
             <button type='submit'>Finish</button>

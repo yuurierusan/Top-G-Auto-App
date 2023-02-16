@@ -65,7 +65,7 @@ const EditProjectForm = ({ project }) => {
                 <textarea
                     id='content'
                     cols='30'
-                    rows='10'
+                    rows='2'
                     onChange={handleChange}
                     value={formState.content}></textarea>
                 <button type='submit'>Finish</button>

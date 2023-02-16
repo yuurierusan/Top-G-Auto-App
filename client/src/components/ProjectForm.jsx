@@ -2,8 +2,10 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import '../styles/projectform.css'
+import { useNavigate } from 'react-router-dom'
 
 const ProjectForm = () => {
+    const navigate = useNavigate()
     const initialState = {
         title: '',
         startDate: '',
@@ -23,6 +25,7 @@ const ProjectForm = () => {
             formState
         )
         setFormState(initialState)
+        navigate(`/car/detail/${carId}`)
     }
 
     const handleChange = (e) =>
@@ -63,7 +66,7 @@ const ProjectForm = () => {
                 <textarea
                     id='content'
                     cols='30'
-                    rows='10'
+                    rows='2'
                     onChange={handleChange}
                     value={formState.content}></textarea>
                 <button type='submit'>Create</button>
