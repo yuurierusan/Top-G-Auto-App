@@ -4,6 +4,7 @@ const CardToAbout = (props) => {
         <div className='card about-card' onClick={props.onClick}>
             <div className='img-wrapper'>
                 <img
+                    style={{ backgroundSize: 'cover', width: 'auto' }}
                     src='https://mrclown.tv/wp-content/uploads/2014/11/MC_SightWords-about.jpg'
                     alt='img'
                 />

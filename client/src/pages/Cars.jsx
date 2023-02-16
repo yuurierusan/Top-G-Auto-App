@@ -25,9 +25,11 @@ const ViewCars = (props) => {
 
     return (
         <div className='car-container'>
-            <a href={`/cars/create`} className='button-link'>
-                Add Your Ride
-            </a>
+            <div className='button-div'>
+                <a href={`/cars/create`} className='button-link'>
+                    Add Your Ride
+                </a>
+            </div>
             {cars.map((car) => (
                 <div className='cars-a' key={car._id}>
                     <Link to={`/car/detail/${car._id}`}>
