@@ -30,10 +30,6 @@ const CarDetail = () => {
         setComments(resTwo.data.comment)
     }
 
-    const updateProject = async () => {}
-
-    const updateComments = async () => {}
-
     const deleteProject = async (project) => {
         console.log(project)
         await axios.delete(
