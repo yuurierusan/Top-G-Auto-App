@@ -1,4 +1,4 @@
-# Top-G-Auto-App![Image](./client/public/banner.png)
+![Image](./client/public/banner.png)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/yuurierusan/Top-G-Auto-App)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/yuurierusan/Top-G-Auto-App)
@@ -43,8 +43,8 @@
 
 ### **_Screenshots_**
 
-![Image]()
-![Image]()
+![Image](./client/public/ss1.png)
+![Image](./client/public/ss1.png)
 
 ---
 
