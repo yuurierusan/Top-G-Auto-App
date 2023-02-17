@@ -44,7 +44,7 @@
 ### **_Screenshots_**
 
 ![Image](./client/public/ss1.png)
-![Image](./client/public/ss1.png)
+![Image](./client/public/ss2.png)
 
 ---
 
