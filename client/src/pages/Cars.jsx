@@ -1,4 +1,4 @@
-import '../styles/cars.css'
+import '../styles/Cars.css'
 
 import { Link, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
