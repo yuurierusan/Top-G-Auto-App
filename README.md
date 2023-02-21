@@ -33,7 +33,7 @@
 
 ### **_Getting Started_**
 
-##### Once the site is complete you'll be able to access and marvel at these magnificent cars with the car community [here](TBA).
+##### Once the site is complete you'll be able to access and marvel at these magnificent cars with the car community [here](https://top-g-auto.herokuapp.com/).
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/invite/b/OPazj8RS/ATTI83b09a03dd5606e6c8d2472303eb86a850A2BF6D/top-g-auto).
 
